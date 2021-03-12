@@ -1,9 +1,18 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
-})
+  res.json([
+    {
+      name: 'object 1',
+      message: 'lorem ipsum',
+    },
+    {
+      name: 'object 2',
+      message: 'hello world',
+    },
+  ]);
+});
 
-const port = process.env.PORT || 3000
-app.listen(port)
+const port = process.env.PORT || 3000;
+app.listen(port);
